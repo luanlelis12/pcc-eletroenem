@@ -41,7 +41,7 @@ if ($_SESSION['id']!=1) {
             
             if($query->num_rows > 0){
                 while($row = $query->fetch_assoc()){
-                $imageURL = '../_img/uploads/'.$row["imagem"];
+                $imageURL = '../uploads/'.$row["imagem"];
             ?>
             <tr>
                 <td><img src="<?php echo $imageURL; ?>" alt="" /></td>

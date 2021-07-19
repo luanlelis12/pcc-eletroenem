@@ -1,6 +1,7 @@
 <?php
 
-require_once '../_php/scoreController.php';
+require_once '../_php/authController.php';
+require_once '../_php/questionController.php';
 
 if (($_SESSION['id']) == "") {
     $errors['login'] = 'Para jogar é necessário fazer o login. Por favor, faça o seu login.';
@@ -19,7 +20,7 @@ if (($_SESSION['id']) == "") {
 
     <script>
 
-    var contador = '300';
+    var contador = '600';
 
     function startTimer(duration, display) {
         var timer = duration, minutes, seconds;
@@ -83,8 +84,8 @@ if (($_SESSION['id']) == "") {
     $num = 1;
     
     for($i=0;$i<5;$i++) {
-    $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionF'][$i]}'");
-    $queryD = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionD'][$i]}'");
+    $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$questionF[$i]}'");
+    $queryD = $conexao->query("SELECT * FROM question WHERE id = '{$questionD[$i]}'");
 
     if($queryF->num_rows > 0){
         while($rowF = $queryF->fetch_assoc()){
@@ -111,7 +112,7 @@ if (($_SESSION['id']) == "") {
     <?php
     if($queryD->num_rows > 0){
         while($rowD = $queryD->fetch_assoc()){
-        $imageURLD = '../_img/uploads/'.$rowD["imagem"];
+        $imageURLD = '../uploads/'.$rowD["imagem"];
     ?>
 
     <div>
@@ -130,6 +131,7 @@ if (($_SESSION['id']) == "") {
     </div>
         
     <hr <?php echo'id="question'.$num.'"'; $num++; ?>>
+
 
     <?php } ?>
 
@@ -159,6 +161,7 @@ if (($_SESSION['id']) == "") {
             <p>Infelizmente o tempo acabou :( agora você escolher reiniciar a partida ou voltar para a página inicial.</p>
             <a id="voltar" href="../index.php">Voltar</a>
             <a id="reiniciar" onClick="window.location.reload();">Reiniciar</a>
+
     </div>
 </div>
 

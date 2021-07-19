@@ -1,5 +1,5 @@
 <?php
-require_once 'authController.php';
+require_once 'conexao.php';
 
 $_SESSION['q_facil'] = [];
 $_SESSION['q_dificil'] = [];
@@ -10,6 +10,7 @@ $questionD = [];
 
 $queryF = $conexao->query("SELECT id FROM question WHERE dificil = 0");
 $queryD = $conexao->query("SELECT id FROM question WHERE dificil = 1");
+
 
 if($queryF->num_rows > 0){
     while($rowF = $queryF->fetch_assoc()){
@@ -64,7 +65,6 @@ for($i=0; $i<5; $i++){
 
 $_SESSION['questionF'] = $questionF;
 $_SESSION['questionD'] = $questionD;
-
-header('Location: ../_sites/jogo.php');
+$_SESSION['pontuacao'] = 0;
 
 ?>

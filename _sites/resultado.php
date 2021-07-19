@@ -1,6 +1,4 @@
-<?php
-require_once '../_php/authController.php';
-require_once '../_php/ScoreController.php'; 
+<?php require_once '../_php/ScoreController.php'; 
 
 if(!isset($_SESSION['id'])) {
     header('Location: ../index.php');
@@ -36,7 +34,7 @@ if(!isset($_SESSION['id'])) {
         <img src="../_img/bg5.png" id="background" alt="">
         
     <div class="resultado-section"> 
-        <h1>Resultado do jogo: <?php if(isset($recorde)){echo $recorde;} ?></h1>
+        <h1>Resultado do jogo <?php if(isset($recorde)){echo $recorde;} ?></h1>
 
         <div class="tables-resultados">
 
