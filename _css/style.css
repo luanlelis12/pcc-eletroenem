@@ -10,6 +10,10 @@ body {
     background-color: #f9f9f9;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 ::-webkit-scrollbar-track
 {
     border: 5px solid #070727;
@@ -159,7 +163,7 @@ ul.index-header li a:hover, ul.game-header li a:hover {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 159px;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 2;
 }
@@ -199,7 +203,7 @@ div.index-section {
     position: relative;
 }
 
-#background {
+#background { 
     width: 100%;
     position: absolute;
     top: 50%;
@@ -453,6 +457,7 @@ div.login, div.cadastro {
 .question-view {
     padding-top: 110px;
     padding-bottom: 30px;
+    background: url('../_img/bg4.png') fixed;
 }
 
 .question-div {
@@ -591,14 +596,122 @@ div.login, div.cadastro {
 .finished-remove {display: none;}
 .finished-show {display: block;}
 
-/* ccs resultado do jogo */
+/* ccs resultado do jogo e classificacao*/
 
 .resultado-section {
     background-color: #fff;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 50%;
+    top: 55%;
     width: 90vw;
-    height: 90vh;
+    height: 83vh;
 }
+
+.resultado-section h1 {
+    margin-left: 20px;
+}
+
+.navbar-highlight-black {
+    background: currentColor;
+    margin: 4vh 17px;
+    height: 52vh;
+    width: 2px;
+    color: #333;
+}
+
+.resultado-section .tables-resultados {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+div.table-resultado, div.table-clasificacao {
+    width: 45%;
+}
+
+div.table-clasificacao {
+    max-height: 59vh;
+    overflow-y: auto;
+}
+
+table.table-resultado, table.table-clasificacao {
+    width: 100%;
+}
+
+.table-resultado td, .table-clasificacao td {
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+.table-resultado td {
+    width: 50%;
+}
+
+.table-clasificacao td {
+    min-width: 33%;
+}
+
+.table-clasificacao th {
+    min-width: 100px;
+}
+
+.table-resultado .td1, .table-clasificacao .td1 {
+    background: #DDD;
+    border: 1px solid #b6b6b6;
+}
+
+.table-resultado .td2, .table-clasificacao .td2 {
+    background: #a7d5f8;
+    border: 1px solid #69aadb;
+}
+
+.table-clasificacao .tdUser {
+    background: #78b6e6;
+}
+
+.table-clasificacao .thUser {
+    background: #c5c5c5;
+}
+
+.link-game {
+    margin-left: 41px;
+    margin-right: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.link-game a, .search-player a {
+    padding: 10px;
+    background: #070727;
+    color: #fff;
+}
+
+.search-player {
+    margin-left: 41px;
+    margin-top: 20px;
+}
+
+div.geral div {
+    width: 100%;
+}
+
+div.geral {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 95%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-height: 420px;
+}
+
+@media (min-width: 1025px) {}
+
+@media (max-width: 1024px) {}

@@ -75,8 +75,6 @@ if (($_SESSION['id']) == "") {
 
 
 <div class="question-view">
-
-    <img id="background" src="../_img/bg4.png" alt="">
     
     <div class="question-div">
     <form action="resultado.php" method="post">
@@ -91,7 +89,7 @@ if (($_SESSION['id']) == "") {
 
     if($queryF->num_rows > 0){
         while($rowF = $queryF->fetch_assoc()){
-        $imageURLF = '../uploads/'.$rowF["imagem"];
+        $imageURLF = '../_img/uploads/'.$rowF["imagem"];
     ?>
     
     <div>

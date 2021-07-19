@@ -3,8 +3,10 @@ require_once 'conexao.php';
 session_start();
 
 $_SESSION['pontuacao'] = 0;
-
 $id_user = $_SESSION['id'];
+$numF = 0;
+$numD = 0;
+$game = 1;
 
 for($j=0; $j<5; $j++){
     $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionF'][$j]}'");
@@ -14,6 +16,7 @@ for($j=0; $j<5; $j++){
             $altc = strtolower($rowF['altC']);
             if ($reposta == $altc) {
                 $_SESSION['pontuacao'] += 15;
+                $numF++;
             }
         }
     }    
@@ -27,6 +30,7 @@ for($j=0; $j<5; $j++){
             $altc = strtolower($rowD['altC']);
             if ($reposta == $altc) {
                 $_SESSION['pontuacao'] += 25;
+                $numD++;
             }
         }
     }    
@@ -37,44 +41,62 @@ $segundos = $_POST['segundos'];
 
 $total = 600-(($minutos*60) + $segundos); 
 
-$pontuacao = $_SESSION['pontuacao'];
-
 if($total<60) {
-    $pontuacao = $pontuacao * 2;
+    $multiplicador = 2;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<120) {
-    $pontuacao = $pontuacao * 1.9;
+    $multiplicador = 1.9;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<180) {
-    $pontuacao = $pontuacao * 1.8;
+    $multiplicador = 1.8;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<240) {
-    $pontuacao = $pontuacao * 1.7;
+    $multiplicador = 1.7;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<300) {
-    $pontuacao = $pontuacao * 1.6;
+    $multiplicador = 1.6;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<360) {
-    $pontuacao = $pontuacao * 1.5;
+    $multiplicador = 1.5;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<420) {
-    $pontuacao = $pontuacao * 1.4;
+    $multiplicador = 1.4;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<480) {
-    $pontuacao = $pontuacao * 1.3;
+    $multiplicador = 1.3;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<540) {
-    $pontuacao = $pontuacao * 1.2;
+    $multiplicador = 1.2;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 } elseif ($total<600) {
-    $pontuacao = $pontuacao * 1.1;
+    $multiplicador = 1.1;
+    $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 }
 
-// echo $minutos.':'.$segundos.'<br>'.$total; 
+if ($segundos==0) {
+    $tempo = (10-$minutos)."00";
+    $tempoString = (10-$minutos).":00";
+} else {
+    $tempo = (9-$minutos).(60-$segundos);
+    $tempoString = "0".(9-$minutos).":".(60-$segundos);
+}
 
-// $queryScore = sprintf("SELECT * FROM user WHERE id = '{$_SESSION['id']}'");
-// $resultScore = mysqli_query($conexao, $queryScore);
+$query = "SELECT * FROM user WHERE id = '{$_SESSION['id']}'";
+$score = mysqli_query($conexao, $query);
 
-// while($rowScore = mysqli_fetch_array($resultScore))
-// {
-//     if ($pontuacao > $rowScore['pontuacao']) {
-//         $sql = "UPDATE user SET pontuacao=(?) WHERE id = '{$_SESSION['id']}'";
-//         $stmt = $conexao->prepare($sql);
-//         $stmt->bind_param('i', $_SESSION['pontuacao']);
-//         $stmt->execute();
-//     }
-// }  
-
+while($row = mysqli_fetch_array($score))
+{
+    if ($pontuacao > $row['pontuacao']) {
+        $sql = "UPDATE user SET pontuacao=(?) WHERE id = '{$_SESSION['id']}'";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param('i', $pontuacao);
+        $stmt->execute();
+        $sql = "UPDATE user SET tempo=(?) WHERE id = '{$_SESSION['id']}'";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param('i', $tempo);
+        $stmt->execute();
+        $recorde = "Novo recorde!";
+    }
+}
 
 ?>
