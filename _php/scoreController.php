@@ -1,13 +1,12 @@
 <?php
-require_once 'conexao.php';
-session_start();
+require_once 'authController.php';
 
 $_SESSION['pontuacao'] = 0;
 $id_user = $_SESSION['id'];
 $numF = 0;
 $numD = 0;
-$game = 1;
 
+if (isset($_POST['Responder'])){
 for($j=0; $j<5; $j++){
     $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionF'][$j]}'");
     if($queryF->num_rows > 0){
@@ -98,5 +97,5 @@ while($row = mysqli_fetch_array($score))
         $recorde = "Novo recorde!";
     }
 }
-
+}
 ?>

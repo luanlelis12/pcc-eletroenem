@@ -36,7 +36,7 @@ if (isset($_GET['token'])) {
                     </div>
                 </div>
             <?php } else { ?>
-                <a href="_sites/cadastro.php">Inscrever-se</a></li><li><a href="_sites/login.php">Entrar</a>
+                <a href="_sites/cadastro.php">Inscrever-se</a></li><li><a href="_php/jogo.php">Entrar</a>
             <?php } ?></li>
             </ul>
         </nav>
@@ -51,7 +51,7 @@ if (isset($_GET['token'])) {
             <div><span>Um novo site feito para lhe ensinar eletromagnetismo de uma maneira mais fácil e divertida!</span></div>
         </div>
         <?php if (isset($_SESSION['id'])) { ?>
-            <div id="jogo"><a href="_sites/jogo.php"><img src="_img/botao-play.png" alt=""/><h2>Jogar</h2></a></div>
+            <div id="jogo"><a href="_php/questionController.php"><img src="_img/botao-play.png" alt=""/><h2>Jogar</h2></a></div>
         <?php } ?>
         <img id="background" src="_img/bg3.png" alt="">
     </div>
