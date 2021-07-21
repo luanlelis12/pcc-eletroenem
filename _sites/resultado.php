@@ -2,6 +2,8 @@
 
 if(!isset($_SESSION['id'])) {
     header('Location: ../index.php');
+} elseif ($gameon == 0) {
+    header('Location: ../index.php');
 }
 
 ?>
@@ -14,8 +16,9 @@ if(!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eletroenem</title>
     <link rel="stylesheet" href="../_css/style.css">
+    <link rel="sortcut icon" href="../_img/atomo.png" type="image/png" />
 </head>
-<body>
+<body class="body-classificacao">
     
     <header class="index-header">
         <div class="index-header">
@@ -30,9 +33,7 @@ if(!isset($_SESSION['id'])) {
 
         </div>
     </header>
-    
-        <img src="../_img/bg5.png" id="background" alt="">
-        
+            
     <div class="resultado-section"> 
         <h1>Resultado do jogo <?php if(isset($recorde)){echo $recorde;} ?></h1>
 

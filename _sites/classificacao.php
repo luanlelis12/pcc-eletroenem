@@ -9,8 +9,9 @@
     <title>Eletroenem</title>
     <link rel="stylesheet" href="../_css/style.css">
     <script src="../_js/css-add.js"></script>
+    <link rel="sortcut icon" href="../_img/atomo.png" type="image/png" />
 </head>
-<body>
+<body class="body-classificacao">
     
     <header class="index-header">
         <div class="index-header">
@@ -28,17 +29,15 @@
                     </div>
                 </div>
             <?php } else { ?>
-                <a href="../_sites/cadastro.php">Inscrever-se</a></li><li><a href="../_sites/login.php">Entrar</a>
+                <a id="cadastro" href="../_sites/cadastro.php">Inscrever-se</a></li><li><a href="../_sites/login.php">Entrar</a>
             <?php } ?></li>
             </ul>
         </nav>
 
         </div>
     </header>
-    
-        <img src="../_img/bg5.png" id="background" alt="">
         
-    <div class="resultado-section"> 
+    <div class="classificacao-section"> 
         <h1>Classificação geral</h1>
 
         <div class="table-clasificacao geral">

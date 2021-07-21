@@ -10,6 +10,8 @@ if ($_SESSION['id']!=1) {
 <!DOCTYPE html>  
 <html>  
     <head>
+        <link rel="sortcut icon" href="../_img/atomo.png" type="image/png" />
+        <title>Eletroenem</title>
     </head>  
     <body>  
         
@@ -41,7 +43,7 @@ if ($_SESSION['id']!=1) {
             
             if($query->num_rows > 0){
                 while($row = $query->fetch_assoc()){
-                $imageURL = '../uploads/'.$row["imagem"];
+                $imageURL = '../_img/uploads/'.$row["imagem"];
             ?>
             <tr>
                 <td><img src="<?php echo $imageURL; ?>" alt="" /></td>

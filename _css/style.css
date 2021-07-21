@@ -62,7 +62,6 @@ header.index-header, header.game-header {
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
     z-index: 1;
 }
 
@@ -79,12 +78,7 @@ header.game-header {
 div.index-header, div.game-header {
     margin: 0 auto;
     padding: 0 15px;
-    max-width: 1170px;
-    height: 80px;
     display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between; 
-    -webkit-box-direction: normal;
     position: absolute;
     top: 0;
     left: 0;
@@ -111,7 +105,6 @@ ul.index-header li, ul.game-header li {
 }
 
 ul.index-header li a:not(.dropdown-link), ul.game-header li a, ul.game-header li div {
-    padding: 28px 12px;
     display: block;
     font-size: 16px;
     line-height: 1.5;
@@ -119,7 +112,7 @@ ul.index-header li a:not(.dropdown-link), ul.game-header li a, ul.game-header li
     transition: color 0.2s;
 }
 
-ul.game-header li div #time {
+ul.game-header li #time {
     color: #ff9900;
 }
 
@@ -130,7 +123,6 @@ ul.index-header li a:hover, ul.game-header li a:hover {
 .profile-button {
     background-color: rgba(29, 29, 29, 0);
     border: none;
-    padding: 20px 0;
     cursor: pointer;
     align-items: center;
     display: flex;
@@ -141,7 +133,6 @@ ul.index-header li a:hover, ul.game-header li a:hover {
 .profile-button div {
     display: inline-block;
     margin: auto 0;
-    height: 33px;
 }
 
 .profile-button div span {
@@ -163,7 +154,6 @@ ul.index-header li a:hover, ul.game-header li a:hover {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 2;
 }
@@ -185,14 +175,6 @@ ul.index-header li a:hover, ul.game-header li a:hover {
 .svg-show {transform: rotate(180deg); color: #F48205;}
 .span-show {color: #F48205;}
 
-.navbar-highlight-white {
-    background: currentColor;
-    margin: 32px 17px;
-    height: 16px;
-    width: 2px;
-    color: #F5F5F5;
-}
-
 /* css principal da index */
 
 div.index-section {
@@ -204,48 +186,30 @@ div.index-section {
 }
 
 #background { 
-    width: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     z-index: -5;
     transition: width 0.5s;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .index-section #titulo{
     position: relative;
-    top: 50%;
     transform: translateY(-50%);
-    margin-left: 5vw;
     color: #f5f5f5;
-    width: min-content;
 }
 
 .index-section h1 {
     margin: 0;
     padding-top: 1rem;
-    font-size: 6.2rem;
-    letter-spacing: 0.05em;
 }
 
 .index-section #titulo div {
-    width: 500px;
     margin: 0;
-}
-
-.index-section span {
-    line-height: 4vh;
-    letter-spacing: 1.3px;
 }
 
 .index-section #jogo {
     position: absolute;
-    top: 50%;
-    right: 0;
     transform: translateY(-50%);
-    width: 448px;
-    margin-right: 5vw;
 }
 
 .index-section #jogo a {
@@ -256,21 +220,8 @@ div.index-section {
     flex-direction: row;
 }
 
-.index-section #jogo a img {
-    margin-right: 10px;
-}
-
 .index-section a img {
-    filter:brightness(5);
-    height: 10rem;
-}
-
-.index-section a h2 {
-    font-size: 6rem;
-}
-
-.index-section #jogo:hover + #background {
-    width: 120%;
+    filter: brightness(5);
 }
 
 .index-section #jogo:hover img {
@@ -288,12 +239,11 @@ body.login, body.cadastro {
 }
 
 div.login, div.cadastro {
-    transform: translate(-50%, -50%);
-    position: absolute;
+    transform: translateX(-50%);
+    position: relative;
     left: 50%;
-    top: 50%;
     width: 90vw;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     color: #333;
 }
@@ -315,9 +265,6 @@ div.login, div.cadastro {
 
 .login-error, .cadastro-error {
     background-color: rgba(255, 255, 255, 0.9);
-    width: 33%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
 }
 
 .alert-error {
@@ -327,15 +274,12 @@ div.login, div.cadastro {
     border: #f38281 1px solid;
     border-radius: 3px;
     background-color: #FBDAD9;
-    padding: 15px;
-    height: 40%;
+    top: 40%;
+    position: relative;
     display: flex;
     align-items: left;
     justify-content: center;
     flex-direction: column;
-    position: relative;
-    top: 40%;
-    transform: translateY(-50%); 
     font-size: 18px;
 }
 
@@ -345,14 +289,9 @@ div.login, div.cadastro {
 
 .login-form, .cadastro-form {
     background-color: #fff;
-    width: 67%;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 
 .login-criar-conta, .cadastro-entrar-conta {
-    text-align: right;
-    margin-right: 15px;
     margin-top: 25px;
 }
 
@@ -360,21 +299,13 @@ div.login, div.cadastro {
     border: 2px #6DA8D6 solid;
     background: #fff;
     color: #6DA8D6;
-    padding: 11px 18px;
     border-radius: 50vh;
     transition: 0.15s;
-    margin-left: 10px;
 }
 
 .login-criar-conta a:hover, .cadastro-entrar-conta a:hover {
     background: #6DA8D6;
     color: #fff;
-}
-
-.login-form-article, .cadastro-form-article  {
-    margin-top: 65px;
-    margin-left: 7%;
-    margin-right: 7%;
 }
 
 .cadastro-form-article {
@@ -383,7 +314,6 @@ div.login, div.cadastro {
 
 .login-form-article h1 {
     font-size: 55px;
-    margin-bottom: 40px;
 }
 
 .cadastro-form-article h1 {
@@ -391,18 +321,18 @@ div.login, div.cadastro {
     margin-bottom: 15px;
 }
 
-.login-form-article input:not(input[type="submit"], input[type="radio"]), .cadastro-form-article input:not(input[type="submit"], input[type="radio"]) {
+.login-form-article input:not(input[type="submit"]), .cadastro-form-article input:not(input[type="submit"]) {
     width: 100%;
     padding: 10px;
     border: 1px solid #aaa;
     margin-top: 3px;
 }
 
-.login-form-article input:not(input[type="submit"], input[type="radio"]) {
+.login-form-article input:not(input[type="submit"]) {
     margin-bottom: 30px;
 }
 
-.cadastro-form-article input:not(input[type="submit"], input[type="radio"]) {
+.cadastro-form-article input:not(input[type="submit"]) {
     margin-bottom: 20px;
 }
 
@@ -412,22 +342,13 @@ div.login, div.cadastro {
 
 .esqueceu-senha {
     text-align: right;
-    margin-bottom: 30px;
 }
 
 .esqueceu-senha a {
     color: #aaa;
 }
 
-.lembrar-login {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center
-}
-
 .login-form-article input[type="submit"], .cadastro-form-article input[type="submit"] {
-    width: 33%;
     height: 45px;
     color: #fff;
     background: #489cdd;
@@ -464,30 +385,21 @@ div.login, div.cadastro {
     position: relative;
     transform: translateX(-50%);
     left: 50%;
-    width: 90%;
+    width: 90vw;
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
 }
 
 .question-div img {
-    max-width: 80%;
     border: 2px solid #000;
-    margin-bottom: 30px;
-}
-
-.question-div div .question-alt {
-    float: right;
-    width: 18%;
-}
+} 
 
 .question-input {
     border: 3px solid #F48205;
     border-radius: 15px;
     min-width: min-content;
     width: 100%;
-    padding-top: 15px;
-    padding-left: 10px;
 }
 
 .question-div input[type="radio"] {
@@ -511,6 +423,7 @@ div.login, div.cadastro {
     flex-direction: row;
     cursor: pointer;
     transition: 0.2s;
+    margin: 10px;
 }
 
 .question-div label div:hover {
@@ -521,20 +434,6 @@ div.login, div.cadastro {
 .question-div input:checked ~ label div {
     background: #F48205;
     color: #fff;
-}
-
-.link-question {
-    color: #fff;
-    background-color: #F48205;
-    padding: 8px;
-    display: inline-block;
-}
-
-.link-question div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
 }
 
 .question-div input#segundos, .question-div input#minutos {
@@ -550,7 +449,7 @@ div.login, div.cadastro {
     font-size: 1rem;
 }
 
-.error-play, .finished-alert {
+.finished-alert {
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
@@ -560,7 +459,7 @@ div.login, div.cadastro {
     z-index: 99;
 }
 
-.error-play div, .finished-alert div {
+.finished-alert div {
     background-color: #fff;
     color: #333;
     position: absolute;
@@ -571,15 +470,15 @@ div.login, div.cadastro {
     width: 400px;
 }
 
-.error-play div h2, .finished-alert div h2 {
+.finished-alert div h2 {
     margin-bottom: 0;
 }
 
-.error-play div p, .finished-alert div p {
+.finished-alert div p {
     margin-top: 10px;
 }
 
-.error-play div a, .finished-alert div a {
+.finished-alert div a {
     background-color: #548fbd;
     padding: 10px;
     color: #f1f1f1;
@@ -598,37 +497,29 @@ div.login, div.cadastro {
 
 /* ccs resultado do jogo e classificacao*/
 
+.body-classificacao {
+    background: url('../_img/bg5.png') fixed no-repeat;
+    width: 100%;
+}
+
 .resultado-section {
     background-color: #fff;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    position: relative;
     left: 50%;
-    top: 55%;
     width: 90vw;
-    height: 83vh;
+    min-height: 83vh;
+    padding-bottom: 2px;
 }
 
 .resultado-section h1 {
     margin-left: 20px;
 }
 
-.navbar-highlight-black {
-    background: currentColor;
-    margin: 4vh 17px;
-    height: 52vh;
-    width: 2px;
-    color: #333;
-}
-
 .resultado-section .tables-resultados {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    flex-direction: row;
-}
-
-div.table-resultado, div.table-clasificacao {
-    width: 45%;
 }
 
 div.table-clasificacao {
@@ -677,8 +568,6 @@ table.table-resultado, table.table-clasificacao {
 }
 
 .link-game {
-    margin-left: 41px;
-    margin-right: 41px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -691,27 +580,459 @@ table.table-resultado, table.table-clasificacao {
     color: #fff;
 }
 
-.search-player {
-    margin-left: 41px;
-    margin-top: 20px;
+.classificacao-section {
+    background-color: #fff;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    width: 90vw;
+    min-height: 83vh;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-div.geral div {
-    width: 100%;
+.search-player {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 div.geral {
-    position: relative;
-    transform: translateX(-50%);
-    left: 50%;
-    width: 95%;
-    overflow-x: hidden;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    align-content: center;  
     max-height: 420px;
 }
 
-@media (min-width: 1025px) {}
+@media (min-width: 1025px) {
 
-@media (max-width: 1024px) {}
+    header.index-header, header.game-header {
+        height: 80px;
+    }
+
+    div.index-header, div.game-header {
+        height: 80px;
+        max-width: 1170px;
+        -webkit-box-pack: justify;
+        justify-content: space-between; 
+        -webkit-box-direction: normal;
+    }
+
+    header.index-header img, header.game-header img {
+        max-height: 78px;
+        margin-top: 1px;
+    }
+
+    .navbar-highlight-white {
+        background: currentColor;
+        margin: 32px 17px;
+        height: 16px;
+        width: 2px;
+        color: #F5F5F5;
+    }
+    
+
+    ul.index-header li a:not(.dropdown-link), ul.game-header li a, ul.game-header li div {
+        padding: 28px 12px;
+    }
+
+    .profile-button {
+        padding: 20px 0;
+    }
+
+    .profile-button div {
+        height: 33px;
+    }
+
+    .dropdown-content {
+        width: 150px;
+    }
+
+    /* index */
+    
+    #background { 
+        width: 120%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -5;
+        transition: width 0.5s;
+    }
+
+    .index-section #jogo:hover + #background {
+        width: 140%;
+    }   
+
+    .index-section #titulo{
+        margin-left: 5vw;
+        top: 50%;
+    }
+
+    .index-section h1 {
+        font-size: 6.2rem;
+        letter-spacing: 0.05em;
+    }
+
+    .index-section #titulo div {
+        width: 500px;
+    }
+
+    .index-section span {
+        line-height: 4vh;
+        letter-spacing: 1.3px;
+    }
+
+    .index-section #jogo {
+        top: 50%;
+        right: 0;
+        width: 448px;
+        margin-right: 5vw;
+    }
+
+    .index-section #jogo a img {
+        margin-right: 10px;
+    }
+    
+    .index-section a img {
+        height: 10rem;
+    }
+    
+    .index-section a h2 {
+        font-size: 6rem;
+    }
+
+    /* login e cadastro */
+
+    div.login, div.cadastro {
+        flex-direction: row;
+        margin-top: 4.5vh;
+    }
+
+    .login-error, .cadastro-error {
+        width: 33%;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .login-form, .cadastro-form {
+        width: 67%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .login-criar-conta, .cadastro-entrar-conta {
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    .login-criar-conta a, .cadastro-entrar-conta a {
+        padding: 11px 18px;
+    }
+
+    .login-criar-conta a, .cadastro-entrar-conta a {
+        margin-left: 10px;
+    }
+
+    .login-form-article, .cadastro-form-article  {
+        margin-top: 65px;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .esqueceu-senha {
+        margin-bottom: 30px;
+    }
+
+    .login-form-article input[type="submit"], .cadastro-form-article input[type="submit"] {
+        width: 33%;
+        margin-bottom: 15px;
+    }
+
+    .alert-error {
+        height: 40%;
+        transform: translateY(-50%);
+    }
+
+    .alert-error li {
+        margin: 15px;
+    }
+
+    /* página do jogo */
+
+    .body-classificacao {
+        background-size: 100%;
+    }
+
+    .question-div div .question-alt {
+        float: right;
+        width: 18%;
+    }
+
+    .question-div img {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .question-input {
+        padding-top: 5px;
+    }
+
+    .link-question {
+        color: #fff;
+        background-color: #F48205;
+        padding: 8px;
+        display: inline-block;
+    }
+    
+    .link-question div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    /* resultado e classificação */
+    
+    .resultado-section, .classificacao-section {
+        margin-top: 100px;
+    }
+
+    .resultado-section .tables-resultados {
+        flex-direction: row;
+    }
+    
+    .navbar-highlight-black {
+        background: currentColor;
+        margin: 4vh 17px;
+        height: 52vh;
+        width: 2px;
+        color: #333;
+    }
+
+    div.table-resultado, div.table-clasificacao {
+        width: 45%;
+    }
+
+    .link-game {
+        margin: 10px;
+        margin-left: 41px;
+        margin-right: 41px;
+    }
+
+    div.geral {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    header.index-header, header.game-header {
+        height: 125px;
+    }
+
+    div.index-header, div.game-header {
+        height: 125px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header.index-header img, header.game-header img {
+        margin-top: 5px;
+        max-height: 67.5px;
+        max-width: 330px;
+    }
+
+    ul.index-header li a:not(.dropdown-link), ul.game-header li a, ul.game-header li div {
+        padding: 14px 5px;
+    }
+
+    ul.index-header #cadastro {
+        display: none;
+    }
+
+    .profile-button {
+        padding: 14px 0;
+    }
+
+    .dropdown-content {
+        width: 100px;
+    }
+
+    /* index */
+
+    .index-section {
+        background: url('../_img/bg3.png') no-repeat fixed;
+        background-position: center;
+        background-size: 400%;
+    }
+
+    #background { 
+        display: none;
+    }
+
+    .index-section #titulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        top: 47%;
+    }
+
+    .index-section h1 {
+        font-size: 3.6rem;
+        letter-spacing: 0.01em;
+        width: min-content;
+    }
+
+    .index-section #titulo div {
+        width: min-content;
+        min-width: 329px;
+    }
+
+    .index-section #titulo span{
+        line-height: 4vh;
+        letter-spacing: 1.3px;
+    }
+
+    .index-section #jogo a img {
+        margin-right: 5px;
+    }
+    
+    .index-section a img {
+        height: 6.2rem;
+    }
+    
+    .index-section a h2 {
+        font-size: 3.6rem;
+    }
+
+    .index-section #jogo {
+        top: 70%;
+        width: 100%;
+    }
+
+    /* login e cadastro */
+
+    div.login, div.cadastro {
+        flex-direction: column;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+    }
+
+    .login-error, .cadastro-error {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .login-form, .cadastro-form {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .login-criar-conta, .cadastro-entrar-conta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .login-criar-conta a, .cadastro-entrar-conta a {
+        padding: 5px 9px;
+    }
+
+    .login-form-article, .cadastro-form-article  {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .login-form-article h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+
+    .esqueceu-senha {
+        margin-bottom: 15px;
+    }
+
+    .login-form-article input[type="submit"], .cadastro-form-article input[type="submit"] {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .alert-error {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .alert-error li {
+        margin: 7px;
+    }
+
+    /* página do jogo */
+
+    .question-div div .question-alt {
+        width: 100%;
+    }
+
+    .question-div img {
+        max-width: 100%;
+    }
+
+    .question-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .link-question {
+        display: none;
+    }
+
+    .time-desktop {
+        display: none;
+    }
+
+    /* resultado e classificação */
+
+    .resultado-section, .classificacao-section {
+        margin-top: 140px;
+    }
+
+    .resultado-section .tables-resultados {
+        flex-direction: column;
+    }
+
+    div.table-resultado, div.table-clasificacao {
+        width: 90%;
+    }
+
+    div.table-clasificacao {
+        margin-top: 20px;
+    }
+
+    div.table-clasificacao::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    div.table-clasificacao::-webkit-scrollbar-corner {
+        background: #070727;
+    }
+
+    .link-game {
+        margin: 10px;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    table.geral {
+        width: 100%;
+    }
+}

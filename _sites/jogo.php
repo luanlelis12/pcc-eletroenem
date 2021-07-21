@@ -15,8 +15,9 @@ if (($_SESSION['id']) == "") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eletroenem</title>
     <link rel="stylesheet" href="../_css/style.css">
+    <link rel="sortcut icon" href="../_img/atomo.png" type="image/png" />
 
     <script>
 
@@ -66,7 +67,7 @@ if (($_SESSION['id']) == "") {
                 <li><a href="../index.php">Home</a></li>
                 <li><a href="../_sites/classificacao.php">Classificação</a></li>
                 <li role="separator" class="navbar-highlight-white"></li>
-                <li><div>O tempo termina em <span id="time">Carregando...</span>!</div></li>
+                <li><div><span class="time-desktop">O tempo termina em </span><span id="time">Carregando...</span><span class="time-desktop">!</span></div></li>
             </ul>
         </nav>
 
@@ -98,12 +99,12 @@ if (($_SESSION['id']) == "") {
         <div class="question-alt">
         <h3>Responder aqui:</h3>
         <?php echo '<div class="question-input">
-            <div><input type="radio" name="questionF'. ($i+1) .'" value="a" id="altA'. $num .'" required><label for="altA'. $num .'"><div>A</div></label></div><br>
-            <div><input type="radio" name="questionF'. ($i+1) .'" value="b" id="altB'. $num .'" required><label for="altB'. $num .'"><div>B</div></label></div><br>
-            <div><input type="radio" name="questionF'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div><br>
-            <div><input type="radio" name="questionF'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div><br>
-            <div><input type="radio" name="questionF'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div><br>
-            '. $rowF['altC'] .' </div></div>'; }}?>
+            <div><input type="radio" name="questionF'. ($i+1) .'" value="a" id="altA'. $num .'" required><label for="altA'. $num .'"><div>A</div></label></div>
+            <div><input type="radio" name="questionF'. ($i+1) .'" value="b" id="altB'. $num .'" required><label for="altB'. $num .'"><div>B</div></label></div>
+            <div><input type="radio" name="questionF'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div>
+            <div><input type="radio" name="questionF'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div>
+            <div><input type="radio" name="questionF'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div>
+            </div></div>'; }}?>
         <div align="right"><?php echo '<a class="link-question" href="#question'.$num.'">';?><div><span>Próxima Questão</span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.33333,35.83333v100.33333l78.83333,-50.16667z"></path></g></g></svg></div></a></div>
     </div>
 
@@ -112,7 +113,7 @@ if (($_SESSION['id']) == "") {
     <?php
     if($queryD->num_rows > 0){
         while($rowD = $queryD->fetch_assoc()){
-        $imageURLD = '../uploads/'.$rowD["imagem"];
+        $imageURLD = '../_img/uploads/'.$rowD["imagem"];
     ?>
 
     <div>
@@ -121,12 +122,12 @@ if (($_SESSION['id']) == "") {
         <div class="question-alt">
         <h3>Responder aqui:</h3>
         <?php echo '<div class="question-input">
-            <div><input type="radio" name="questionD'. ($i+1) .'" value="a" id="altA'. $num .'" required><label for="altA'. $num .'"><div>A</div></label></div><br>
-            <div><input type="radio" name="questionD'. ($i+1) .'" value="b" id="altB'. $num .'" required><label for="altB'. $num .'"><div>B</div></label></div><br>
-            <div><input type="radio" name="questionD'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div><br>
-            <div><input type="radio" name="questionD'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div><br>
-            <div><input type="radio" name="questionD'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div><br>
-            '. $rowD['altC'] .' </div></div>'; }}?>
+            <div><input type="radio" name="questionD'. ($i+1) .'" value="a" id="altA'. $num .'" required><label for="altA'. $num .'"><div>A</div></label></div>
+            <div><input type="radio" name="questionD'. ($i+1) .'" value="b" id="altB'. $num .'" required><label for="altB'. $num .'"><div>B</div></label></div>
+            <div><input type="radio" name="questionD'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div>
+            <div><input type="radio" name="questionD'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div>
+            <div><input type="radio" name="questionD'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div>
+            </div></div>'; }}?>
         <div align="right"><?php if($num<10){echo '<a class="link-question" href="#question'.$num.'"><div><span>Próxima Questão</span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.33333,35.83333v100.33333l78.83333,-50.16667z"></path></g></g></svg></div></a>';}?></div>
     </div>
         
@@ -142,18 +143,6 @@ if (($_SESSION['id']) == "") {
     </form>
     </div>
 </div>
-
-<?php if(count($errors) > 0): ?>
-    <div class="error-play">
-        <div>
-        <?php foreach($errors as $error): ?>
-            <h2>Error</h2>
-            <p><?php echo $error; ?></p> 
-            <a href="../index.php">Voltar</a>
-        <?php endforeach ?>    
-        </div>
-    </div>
-<?php endif ?>
 
 <div id="finished-time" class="finished-alert finished-remove" >
     <div>

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Eletroenem</title>
     <link rel="stylesheet" href="../_css/style.css">
+    <link rel="sortcut icon" href="../_img/atomo.png" type="image/png" />
 </head>
 <body class="cadastro">
     
@@ -17,9 +18,8 @@
 
             <?php if(count($errors) > 0): ?>
                 <div class="alert-error">
-                    <br>
                     <?php foreach($errors as $error): ?>
-                        <li><?php echo $error; ?></li> <br>
+                        <li><?php echo $error; ?></li>
                     <?php endforeach ?>
                 </div>
             <?php endif ?>

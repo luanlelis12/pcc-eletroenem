@@ -6,7 +6,9 @@ $_SESSION['pontuacao'] = 0;
 $id_user = $_SESSION['id'];
 $numF = 0;
 $numD = 0;
-$game = 1;
+$multiplicador = 0;
+$pontuacao = 0;
+$gameon = 0;
 
 for($j=0; $j<5; $j++){
     $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionF'][$j]}'");
@@ -17,6 +19,7 @@ for($j=0; $j<5; $j++){
             if ($reposta == $altc) {
                 $_SESSION['pontuacao'] += 15;
                 $numF++;
+                $gameon = 1;
             }
         }
     }    
@@ -31,6 +34,7 @@ for($j=0; $j<5; $j++){
             if ($reposta == $altc) {
                 $_SESSION['pontuacao'] += 25;
                 $numD++;
+                $gameon = 1;
             }
         }
     }    

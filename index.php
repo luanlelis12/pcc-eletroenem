@@ -17,8 +17,9 @@ if (isset($_GET['token'])) {
     <title>Eletroenem</title>
     <link rel="stylesheet" href="_css/style.css">
     <script src="_js/css-add.js"></script>
+    <link rel="sortcut icon" href="_img/atomo.png" type="image/png" />
 </head>
-<body>
+<body class="without-overflow">
     
     <header class="index-header">
         <div class="index-header">
@@ -27,16 +28,15 @@ if (isset($_GET['token'])) {
 
         <nav role="navigation" class="index-header">
             <ul class="index-header"><li><a>Home</a></li><li><a href="_sites/classificacao.php">Classificação</a></li><?php if(isset($_SESSION['id'])){if($_SESSION['id']==1){?><li><a href="_sites/admin.php">Admin</a></li><?php }} ?><li role="separator" class="navbar-highlight-white"></li>
-            <li>
             <?php if (isset($_SESSION['id'])) { ?>
-                <div class="dropdown">
+                <li><div class="dropdown">
                 <button onclick="myFunction()" class="profile-button dropbtn"><div><span class="dropbtn" id="span-user">Perfil</span><svg class="dropbtn" viewBox="0 0 1024 1024" id="svg-user"><path d="M476.455 806.696L95.291 425.532Q80.67 410.911 80.67 390.239t14.621-34.789 35.293-14.117 34.789 14.117L508.219 698.8l349.4-349.4q14.621-14.117 35.293-14.117t34.789 14.117 14.117 34.789-14.117 34.789L546.537 800.142q-19.159 19.159-38.318 19.159t-31.764-12.605z"></path></svg></div></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a class="dropdown-link" href="index.php?logout=1" class="logout">Sair</a>
                     </div>
-                </div>
+                </div></li>
             <?php } else { ?>
-                <a href="_sites/cadastro.php">Inscrever-se</a></li><li><a href="_sites/login.php">Entrar</a>
+                <li id="cadastro"><a href="_sites/cadastro.php">Inscrever-se</a></li><li><a href="_sites/login.php">Entrar</a>
             <?php } ?></li>
             </ul>
         </nav>
