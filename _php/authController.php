@@ -41,7 +41,7 @@ if (isset($_POST['Cadastrar'])) {
     $stmt->close();
 
     if ($userCount > 0) {
-        $errors['email'] = "Esse email já existe";
+        $errors['email'] = "Esse email já está cadastrado";
     }
 
     if (count($errors) === 0) {

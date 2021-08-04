@@ -19,7 +19,7 @@ if (isset($_GET['token'])) {
     <script src="_js/css-add.js"></script>
     <link rel="sortcut icon" href="_img/atomo.png" type="image/png" />
 </head>
-<body class="without-overflow">
+<body>
     
     <header class="index-header">
         <div class="index-header">

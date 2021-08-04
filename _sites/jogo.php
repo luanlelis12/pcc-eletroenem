@@ -93,9 +93,9 @@ if (($_SESSION['id']) == "") {
         $imageURLF = '../_img/uploads/'.$rowF["imagem"];
     ?>
     
-    <div>
+    <div class="question">
         <h2>Questão <?php echo '0'.$num .':'; ?></h2>
-        <img src="<?php echo $imageURLF; ?>" alt="" />
+        <div class="question-img"><img src="<?php echo $imageURLF; ?>" alt=""></div>
         <div class="question-alt">
         <h3>Responder aqui:</h3>
         <?php echo '<div class="question-input">
@@ -116,9 +116,9 @@ if (($_SESSION['id']) == "") {
         $imageURLD = '../_img/uploads/'.$rowD["imagem"];
     ?>
 
-    <div>
+    <div class="question">
         <h2>Questão <?php if ($num<10){echo '0'.$num .':';}else{{echo $num .':';}} ?></h2>
-        <img src="<?php echo $imageURLD; ?>" alt="" />
+        <div class="question-img"><img src="<?php echo $imageURLD; ?>" alt=""></div>
         <div class="question-alt">
         <h3>Responder aqui:</h3>
         <?php echo '<div class="question-input">

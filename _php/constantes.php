@@ -1,7 +1,7 @@
 <?php
 
-define('EMAIL', 'teslateste09@gmail.com');
-define('PASSWORD', 'tesla09teste');
+define('EMAIL', 'eletroenempcc@gmail.com');
+define('PASSWORD', 'eletroenem_12');
 
 
 define('DB_HOST', 'localhost');
