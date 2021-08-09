@@ -16,9 +16,9 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
     
-            $insert = $conexao->query("INSERT into question (imagem, altC, dificil) VALUES ('".$fileName."', '".$altC."', '".$dificuldade."')");
+            $sql = $conexao->query("INSERT into question (imagem, altC, dificil) VALUES ('".$fileName."', '".$altC."', '".$dificuldade."')");
     
-            if($insert){
+            if($sql){
                 $statusMsg = "O arquivo ".$fileName. " foi enviado para o BD com sucesso.";
             }else{
                 $statusMsg = "Falha no upload, por favor tente novamente.";

@@ -12,6 +12,8 @@ $gameon = 0;
 
 for($j=0; $j<5; $j++){
     $queryF = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionF'][$j]}'");
+    $queryD = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionD'][$j]}'");
+
     if($queryF->num_rows > 0){
         while($rowF = $queryF->fetch_assoc()){
             $reposta = strtolower($_POST['questionF'.($j+1)]);
@@ -23,10 +25,7 @@ for($j=0; $j<5; $j++){
             }
         }
     }    
-}
-
-for($j=0; $j<5; $j++){
-    $queryD = $conexao->query("SELECT * FROM question WHERE id = '{$_SESSION['questionD'][$j]}'");
+    
     if($queryD->num_rows > 0){
         while($rowD = $queryD->fetch_assoc()){
             $reposta = strtolower($_POST['questionD'.($j+1)]);
@@ -43,36 +42,36 @@ for($j=0; $j<5; $j++){
 $minutos = $_POST['minutos'];
 $segundos = $_POST['segundos'];
 
-$total = 600-(($minutos*60) + $segundos); 
+$resolucao = 600-(($minutos*60) + $segundos); 
 
-if($total<60) {
+if($resolucao<60) {
     $multiplicador = 2;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<120) {
+} elseif ($resolucao<120) {
     $multiplicador = 1.9;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<180) {
+} elseif ($resolucao<180) {
     $multiplicador = 1.8;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<240) {
+} elseif ($resolucao<240) {
     $multiplicador = 1.7;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<300) {
+} elseif ($resolucao<300) {
     $multiplicador = 1.6;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<360) {
+} elseif ($resolucao<360) {
     $multiplicador = 1.5;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<420) {
+} elseif ($resolucao<420) {
     $multiplicador = 1.4;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<480) {
+} elseif ($resolucao<480) {
     $multiplicador = 1.3;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<540) {
+} elseif ($resolucao<540) {
     $multiplicador = 1.2;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
-} elseif ($total<600) {
+} elseif ($resolucao<600) {
     $multiplicador = 1.1;
     $pontuacao = $_SESSION['pontuacao'] * $multiplicador;
 }
