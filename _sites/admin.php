@@ -1,5 +1,6 @@
 <?php
 require_once '../_php/authController.php';
+require_once '../_php/upload.php';
 
 if ($_SESSION['id']!=1) {
     header('Location: ../index.php');
@@ -45,7 +46,7 @@ if ($_SESSION['id']!=1) {
         <h1 align="center">Inserção e visualização de questões</h1>  
         <br>  
         
-        <form action="../_php/upload.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
             Selecione uma imagem para fazer Upload:
             <input type="file" name="file"> <br>
             <input type="radio" name="altC" value="a" id="A"><label for="A">A</label>

@@ -104,7 +104,6 @@ if (($_SESSION['id']) == "") {
             <div><input type="radio" name="questionF'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div>
             <div><input type="radio" name="questionF'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div>
             <div><input type="radio" name="questionF'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div>
-            '. $rowF['altC'] .'
             </div></div>'; }}?>
         <div align="right"><?php echo '<a class="link-question" href="#question'.$num.'">';?><div><span>Próxima Questão</span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.33333,35.83333v100.33333l78.83333,-50.16667z"></path></g></g></svg></div></a></div>
     </div>
@@ -128,7 +127,6 @@ if (($_SESSION['id']) == "") {
             <div><input type="radio" name="questionD'. ($i+1) .'" value="c" id="altC'. $num .'" required><label for="altC'. $num .'"><div>C</div></label></div>
             <div><input type="radio" name="questionD'. ($i+1) .'" value="d" id="altD'. $num .'" required><label for="altD'. $num .'"><div>D</div></label></div>
             <div><input type="radio" name="questionD'. ($i+1) .'" value="e" id="altE'. $num .'" required><label for="altE'. $num .'"><div>E</div></label></div>
-            '. $rowD['altC'] .'
             </div></div>'; }}?>
         <div align="right"><?php if($num<10){echo '<a class="link-question" href="#question'.$num.'"><div><span>Próxima Questão</span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M57.33333,35.83333v100.33333l78.83333,-50.16667z"></path></g></g></svg></div></a>';}?></div>
     </div>

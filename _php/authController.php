@@ -97,7 +97,7 @@ if (isset($_POST['logar'])) {
         $_SESSION['verified'] = $user['verified'];
 
         header('location: ../index.php');
-        wexit();
+        exit();
     } else {
         $errors['login_fail'] = "Credenciais erradas";
     }
